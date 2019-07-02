@@ -1,6 +1,8 @@
 package br.com.vimedeiros.controler;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -18,6 +20,18 @@ public class Cliente {
 	private byte encPsiquiatrico;
 	private String anotacoes;
 	
+	public String salvar() {
+		List<String> s = new ArrayList<>();
+		s.add(getNome());
+		s.add(getEmail());
+		s.add(getCpf());
+		//s.add(getDataNascimento());
+		s.add(getTelefone());
+		s.add(getCelular());
+		
+		
+		return"";
+	}
 	
 	
 	public String getAnotacoes() {

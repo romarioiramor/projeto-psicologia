@@ -22,39 +22,27 @@
 			<h:inputText maxlength="10" size="8" value="#{oficina.data}"/>
 			
 			<h:commandButton value="Salvar" action="#{oficina.listar()}"/>
-	
-		</h:panelGrid>
-		
-	<style type="text/css">
-    .ui-row-editor .ui-row-editor-pencil {
-        margin-left:8px;
-    }
-	</style>
+			<h:commandButton value="Voltar" />
+		</h:panelGrid>		
  
-    <p:dataTable var="oficinas" editable="true" style="margin-bottom:20px" value="#{oficina.listar()}" >
+    <p:dataTable var="oficinas" value="#{oficina.listar()}" >
         <f:facet name="header">
             Lista de Palestra
         </f:facet>
 
         <p:column headerText="Tema">
-                <h:inputText style="width:100%" value="#{oficina.tema}"/> 
+                <h:outputText value="#{oficina.tema}" />  
         </p:column>
  
         <p:column headerText="Palestrante">
-                <h:inputText style="width:100%" value="#{oficina.palestrante}"/>
+                <h:outputText value="#{oficina.palestrante}"/>
         </p:column>
  
         <p:column headerText="Data">
-                <h:inputText style="width:100%" value="#{oficina.data}"/>               
+                <h:outputText value="#{oficina.data}"/>               
         </p:column>
  
-        <p:column style="width:30px">
-            <p:rowEditor />
-        </p:column>
-    </p:dataTable>
- 
-   
-     
+    </p:dataTable>   
    </p:fieldset>
  </h:form>
 </h:body>

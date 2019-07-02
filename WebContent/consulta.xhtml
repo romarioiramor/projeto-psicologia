@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Nova Consulta</title>
+</h:head>
+<h:body>
+<h:form>	
+		<p:fieldset legend="Nova Consulta" >
+		<h:panelGrid columns="4" cellpadding="3">
+		<h:outputLabel value="Nome Completo" />
+			<h:inputText maxlength="100" size="40" value="#{cliente.nome}"/>
+			<h:outputLabel value="E-mail" />
+			<h:inputText maxlength="100" size="40" value="#{cliente.email}"/>
+			<h:outputLabel value="CPF" />
+			<h:inputText maxlength="11" size="20" value="#{cliente.cpf}"/>
+			<h:outputLabel value="Data de Nascimento" />
+			<h:inputText maxlength="10" size="20" value="#{cliente.dataNascimento}"/>
+			<h:outputLabel value="Telefone" />
+			<h:inputText maxlength="10" size="20" value="#{cliente.telefone}"/>
+			<h:outputLabel value="Celular" />
+			<h:inputText maxlength="10" size="20" value="#{cliente.celular}"/>
+			<h:outputLabel value="Anotações" />
+			<h:inputTextarea maxlength="255" value="#{consulta.anotacoes}"/>			
+			<h:outputLabel value="Data da Consulta" />
+			<h:inputText maxlength="100" size="20" value="#{consulta.dataConsulta}"/>
+			<h:outputLabel value="Horario Consulta" />
+			<h:inputText maxlength="100" size="20" value="#{consulta.horario}"/>
+			<h:outputLabel value="Valor" />
+			<h:inputText maxlength="100" size="20" value="#{consulta.valorConsulta}"/>			
+			<h:outputLabel value="Valor Total" />
+			<h:inputText maxlength="100" size="20" value="#{consulta.valorTotal}"/>
+			<h:outputLabel value="Enc. Psiquiatrico" />
+			<h:inputFile maxlength="25" size="8" />
+							
+			<h:commandButton value="Salvar" action="#{consulta.listar()}"/>
+		</h:panelGrid>
+		<br></br>				
+			<p:dataTable var="consultas"  >
+        <f:facet name="header">
+            Lista de Consultas
+        </f:facet>
+       	 <p:column headerText="Nome">
+                <h:outputText  value="#{cliente.nome}"/>  
+       	 </p:column>       
+       	 <p:column headerText="Telefone">
+                <h:outputText  value="#{cliente.telefone}"/>  
+      	  </p:column>     
+      	  <p:column headerText="Celular">
+                <h:outputText  value="#{cliente.celular}"/>  
+      	  </p:column>       
+      	  <p:column headerText="Horario">
+                <h:outputText  value="#{consulta.horario}"/>  
+      	  </p:column>       
+          <p:column headerText="Valor Total">
+                <h:outputText  value="#{consulta.valorTotal}"/>  
+          </p:column>      
+        </p:dataTable>
+</p:fieldset>
+</h:form>			
+</h:body>
+</html>
