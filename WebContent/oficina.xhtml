@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Nova Oficina</title>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<p:fieldset legend="Nova Oficina">
+		<h:panelGrid columns="2" cellpadding="20">
+			<h:outputLabel value="Tema" />
+			<h:inputText maxlength="100" size="50" value="#{oficina.tema}"/>
+			<h:outputLabel value="Palestrante" />
+			<h:inputText maxlength="100" size="50" value="#{oficina.palestrante}"/>
+			<h:outputLabel value="Data" />
+			<h:inputText maxlength="10" size="8" value="#{oficina.data}"/>
+			
+			<h:commandButton value="Salvar" action="#{oficina.salvar()}"/>
+	
+		</h:panelGrid>
+		</p:fieldset>
+		
+	</h:form>
+	
+	<style type="text/css">
+    .ui-row-editor .ui-row-editor-pencil {
+        margin-left:8px;
+    }
+</style>
+ 
+ 
+ <h:form id="form">
+    <p:growl id="msgs" showDetail="true"/>
+ 
+    <p:dataTable id="tabOficina" var="oficina" editable="true" style="margin-bottom:20px">
+        <f:facet name="header">
+            Lista de Palestra
+        </f:facet>
+ 
+        <p:ajax event="rowEdit" listener="#{dtEditView.onRowEdit}" update=":form:msgs" />
+        <p:ajax event="rowEditCancel" listener="#{dtEditView.onRowCancel}" update=":form:msgs" />
+ 
+        <p:column headerText="Tema">
+            <p:cellEditor>
+                <h:inputText value="#{oficina.tema}"/>
+            </p:cellEditor>
+        </p:column>
+ 
+        <p:column headerText="Palestrante">
+            <p:cellEditor>
+                <h:inputText value="#{oficina.palestrante}"/>
+            </p:cellEditor>
+        </p:column>
+ 
+        <p:column headerText="Data">
+            <p:cellEditor>
+                <h:inputText value="#{oficina.data}"/>               
+            </p:cellEditor>
+        </p:column>
+ 
+        <p:column style="width:35px">
+            <p:rowEditor />
+        </p:column>
+    </p:dataTable>
+ 
+   
+     
+   
+ </h:form>
+</h:body>
+</html>
