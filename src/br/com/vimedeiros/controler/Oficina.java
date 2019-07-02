@@ -14,20 +14,14 @@ public class Oficina extends Cliente {
 	private String palestrante;
 	
 	
-	List<String> lista = new ArrayList<String>();
-	public Oficina() {
-		lista.add(tema);
-		lista.add(data);
-		lista.add(palestrante);
-	}
-	
-	public String salvar() {
-		if (tema.equals(tema) && data.equals(data) && palestrante.equals(palestrante)) {
-			System.out.println("Salvo com sucesso!!!");
-		}
+	public String listar() {
+		List<String> lista = new ArrayList<String>();
+		lista.add(getTema());
+		lista.add(getData());
+		lista.add(getPalestrante());
 		
-		return"";
-	}
+		return "";
+	}	
 	
 	public String getTema() {
 		return tema;
@@ -50,15 +44,8 @@ public class Oficina extends Cliente {
 
 	@Override
 	public String toString() {
-		return "Oficina [tema=" + tema + ", data=" + data + ", palestrante=" + palestrante + ", lista=" + lista
-				+ ", salvar()=" + salvar() + ", getTema()=" + getTema() + ", getData()=" + getData()
-				+ ", getPalestrante()=" + getPalestrante() + ", getAnotacoes()=" + getAnotacoes() + ", getNome()="
-				+ getNome() + ", getCpf()=" + getCpf() + ", getEmail()=" + getEmail() + ", getDataNascimento()="
-				+ getDataNascimento() + ", getTelefone()=" + getTelefone() + ", getCelular()=" + getCelular()
-				+ ", getEncPsiquiatrico()=" + getEncPsiquiatrico() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+		return "Oficina [tema=" + tema + ", data=" + data + ", palestrante=" + palestrante + "]";
 	}
-	
-	
+
 
 }
