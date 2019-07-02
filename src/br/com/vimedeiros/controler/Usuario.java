@@ -22,6 +22,7 @@ public class Usuario {
         if(login != null && login.equals("admin") && senha != null && senha.equals("admin")) {
             loggedIn = true;
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bem Vindo", login);
+           
         } else {
             loggedIn = false;
             message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Login ou Senha invalidos");
