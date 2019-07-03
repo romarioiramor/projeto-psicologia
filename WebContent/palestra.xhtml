@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+<title>Paletras</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:fieldset legend="Paletras">
+			<h:panelGrid columns="4" cellpadding="5">
+				<h:outputLabel value="Tema" />
+				<h:selectOneMenu value="#{oficina.tema}"/>
+				<h:outputLabel value="Data" />
+				<h:inputText maxlength="10" size="20" value="#{oficina.data}"/>
+				<h:outputLabel value="Nome" />
+				<h:inputText maxlength="255" size="20" value="#{oficina.nome}"/>
+				<h:outputLabel value="Telefone" />
+				<h:inputText maxlength="10" size="20" value="#{oficina.telefone}"/>
+				<h:outputLabel value="E-mail" />
+				<h:inputText maxlength="10" size="20" value="#{oficina.email}"/>							
+			</h:panelGrid>
+			<br></br>
+			<h:panelGrid>			
+				<h:commandButton action="#" value="Inscrever" />
+			</h:panelGrid>								
+			<br></br>				
+			<p:dataTable var="paletras"  value="#{palestra.inscrever()}">
+        <f:facet name="header">
+            Lista de Participantes
+        </f:facet>
+       	 <p:column headerText="Palestra">
+                <h:outputText  value="#{oficina.tema}"/>  
+       	 </p:column>       
+       	 <p:column headerText="Nome">
+                <h:outputText  value="#{oficina.nome}"/>  
+      	  </p:column>     
+      	  <p:column headerText="Telefone">
+                <h:outputText  value="#{oficina.telefone}"/>  
+      	  </p:column>       
+      	  <p:column headerText="E-mail">
+                <h:outputText  value="#{oficina.email}"/>  
+      	  </p:column>       
+     
+        </p:dataTable>
+		</p:fieldset>
+		
+	</h:form>
+
+</h:body>
+</html>
