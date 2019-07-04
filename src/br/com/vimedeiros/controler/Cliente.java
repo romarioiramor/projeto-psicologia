@@ -1,7 +1,6 @@
 package br.com.vimedeiros.controler;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -14,26 +13,43 @@ public class Cliente {
 	private String nome;
 	private String cpf;
 	private String email;
-	private Date dataNascimento;
+	private String dataNascimento;
 	private String telefone;
 	private String celular;
-	private byte encPsiquiatrico;
+	private String encPsiquiatrico;
 	private String anotacoes;
 	
+	public Cliente() {
+		
+	}
+	
+	public Cliente(String nome, String cpf, String email, String dataNascimento, String telefone, String celular,
+			String encPsiquiatrico, String anotacoes) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.email = email;
+		this.dataNascimento = dataNascimento;
+		this.telefone = telefone;
+		this.celular = celular;
+		this.encPsiquiatrico = encPsiquiatrico;
+		this.anotacoes = anotacoes;
+	}
+
 	public String salvar() {
 		List<String> s = new ArrayList<>();
 		s.add(getNome());
 		s.add(getEmail());
 		s.add(getCpf());
-		//s.add(getDataNascimento());
+		s.add(getDataNascimento());
 		s.add(getTelefone());
 		s.add(getCelular());
+
 		
 		
 		return"";
 	}
 	
-	
+
 	public String getAnotacoes() {
 		return anotacoes;
 	}
@@ -58,10 +74,10 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	public String getTelefone() {
@@ -76,13 +92,18 @@ public class Cliente {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-	public byte getEncPsiquiatrico() {
+	public String getEncPsiquiatrico() {
 		return encPsiquiatrico;
 	}
-	public void setEncPsiquiatrico(byte encPsiquiatrico) {
+	public void setEncPsiquiatrico(String encPsiquiatrico) {
 		this.encPsiquiatrico = encPsiquiatrico;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", dataNascimento=" + dataNascimento
+				+ ", telefone=" + telefone + ", celular=" + celular + ", encPsiquiatrico=" + encPsiquiatrico
+				+ ", anotacoes=" + anotacoes + "]";
+	}
 	
 }

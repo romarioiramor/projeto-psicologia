@@ -35,13 +35,13 @@
 			<h:inputText maxlength="100" size="20" value="#{consulta.valorConsulta}"/>			
 			<h:outputLabel value="Valor Total" />
 			<h:inputText maxlength="100" size="20" value="#{consulta.valorTotal}"/>
-			<h:outputLabel value="Enc. Psiquiatrico" />
-			<h:inputFile maxlength="25" size="8" />
+			
+
 							
 			<h:commandButton value="Salvar" action="#{consulta.listar()}"/>
 		</h:panelGrid>
 		<br></br>				
-			<p:dataTable var="consultas"  >
+			<p:dataTable var="consultas"  value="#{consulta.listar()}">
         <f:facet name="header">
             Lista de Consultas
         </f:facet>

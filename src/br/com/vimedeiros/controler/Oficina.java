@@ -13,9 +13,12 @@ public class Oficina extends Cliente {
 	private String data;
 	private String palestrante;
 	
+	public Oficina() {
+		
+	}
 	
 	public String listar() {
-		List<String> lista = new ArrayList<String>();
+		List<String> lista = new ArrayList<>();
 		lista.add(getTema());
 		lista.add(getData());
 		lista.add(getPalestrante());
@@ -46,6 +49,8 @@ public class Oficina extends Cliente {
 	public String toString() {
 		return "Oficina [tema=" + tema + ", data=" + data + ", palestrante=" + palestrante + "]";
 	}
+
+	
 
 
 }

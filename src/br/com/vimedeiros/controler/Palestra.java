@@ -4,14 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
-@ViewScoped
+
+@SessionScoped
 @ManagedBean(name="palestra")
 public class Palestra extends Oficina{
 
+	
+	
+	public Palestra() {
+		
+	}
+	
+	
+
 	public String inscrever() {
-		List<String> insc = new ArrayList<String>();
+
+		
+		List<String> insc = new ArrayList<>();
 		insc.add(getTema());
 		insc.add(getNome());
 		insc.add(getEmail());
@@ -19,5 +30,9 @@ public class Palestra extends Oficina{
 		insc.add(getData());
 		
 		return"";
+		
+			
+		
 	}
+	
 }

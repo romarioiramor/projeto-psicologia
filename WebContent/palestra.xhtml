@@ -6,14 +6,14 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 <h:head>
-<title>Paletras</title>
+<title>Palestras</title>
 </h:head>
 <h:body>
 	<h:form>
 		<p:fieldset legend="Paletras">
 			<h:panelGrid columns="4" cellpadding="5">
 				<h:outputLabel value="Tema" />
-				<h:selectOneMenu value="#{oficina.tema}"/>
+				<h:selectOneListbox value="#{palestra.tema}"/>
 				<h:outputLabel value="Data" />
 				<h:inputText maxlength="10" size="20" value="#{oficina.data}"/>
 				<h:outputLabel value="Nome" />
@@ -33,7 +33,7 @@
             Lista de Participantes
         </f:facet>
        	 <p:column headerText="Palestra">
-                <h:outputText  value="#{oficina.tema}"/>  
+                <h:outputText  value="#{palestra.tema}"/>  
        	 </p:column>       
        	 <p:column headerText="Nome">
                 <h:outputText  value="#{oficina.nome}"/>  
